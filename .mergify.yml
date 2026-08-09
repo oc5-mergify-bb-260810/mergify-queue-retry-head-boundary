@@ -1,0 +1,8 @@
+queue_rules:
+  - name: default
+    queue_conditions: []
+    merge_conditions:
+      - check-success = BB_RETRY_GATE_20260810_C741
+    max_checks_retries: 1
+    checks_timeout: 5 minutes
+    merge_method: merge
