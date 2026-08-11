@@ -1,0 +1,19 @@
+name: BB MQ strict trusted CI 20260811
+
+on:
+  pull_request:
+
+jobs:
+  gate:
+    name: BB_RETRY_GATE_20260810_C741
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject FAIL_FRESH_QUEUE marker
+        shell: bash
+        run: |
+          if [ -f BB_MQ_STRICT_GATE_20260811.txt ] && grep -q 'FAIL_FRESH_QUEUE' BB_MQ_STRICT_GATE_20260811.txt; then
+            echo 'strict gate rejected FAIL_FRESH_QUEUE marker'
+            exit 1
+          fi
+          echo 'strict gate passed'
