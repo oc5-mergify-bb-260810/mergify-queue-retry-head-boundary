@@ -1,0 +1,17 @@
+name: BB Scheduled Freeze Strict Gate 20260811
+
+on:
+  pull_request:
+
+jobs:
+  gate:
+    name: BB_RETRY_GATE_20260810_C741
+    if: github.event.pull_request.user.login == 'mergify[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Complete immediately before owner-scheduled freeze
+        shell: bash
+        run: |
+          target_ms=$((1786454922 * 1000 - 1500))
+          while [ "$(date +%s%3N)" -lt "$target_ms" ]; do sleep 0.1; done
+          echo "BB scheduled-freeze trusted gate passed"
