@@ -9,9 +9,9 @@ jobs:
     if: github.event.pull_request.user.login == 'mergify[bot]'
     runs-on: ubuntu-latest
     steps:
-      - name: Complete before owner-scheduled freeze
+      - name: Complete shortly before owner-scheduled freeze
         shell: bash
         run: |
-          target_ms=$((1786455621 * 1000 - 50000))
+          target_ms=$((1786456292 * 1000 - 45000))
           while [ "$(date +%s%3N)" -lt "$target_ms" ]; do sleep 0.1; done
           echo "BB scheduled-freeze trusted gate passed"
