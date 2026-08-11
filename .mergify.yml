@@ -6,10 +6,3 @@ queue_rules:
     max_checks_retries: 1
     checks_timeout: 5 minutes
     merge_method: merge
-
-pull_request_rules:
-  - name: BB realistic fork autoqueue V8R4
-    conditions:
-      - title = BB MQ realistic head race V8R4
-    actions:
-      queue:
