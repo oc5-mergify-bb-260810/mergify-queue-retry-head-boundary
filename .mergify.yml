@@ -7,4 +7,4 @@ queue_rules:
     allow_queue_branch_edit: true
     max_checks_retries: 0
     checks_timeout: 5 minutes
-    merge_method: merge-batch
+    merge_method: fast-forward
