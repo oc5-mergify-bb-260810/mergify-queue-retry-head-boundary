@@ -7,3 +7,5 @@ queue_rules:
     checks_timeout: 5 minutes
     merge_method: merge
 
+
+# separate CP control
