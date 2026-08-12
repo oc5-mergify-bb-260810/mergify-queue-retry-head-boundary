@@ -3,8 +3,6 @@ queue_rules:
     queue_conditions: []
     merge_conditions:
       - check-success = BB_MQ_CURRENT_EXACT_GATE_20260812_Z9X3
-    batch_size: 2
-    allow_queue_branch_edit: true
-    max_checks_retries: 0
+    max_checks_retries: 1
     checks_timeout: 5 minutes
-    merge_method: fast-forward
+    merge_method: merge
