@@ -6,3 +6,4 @@ queue_rules:
     max_checks_retries: 1
     checks_timeout: 5 minutes
     merge_method: merge
+# BB control-plane negative 20260814
